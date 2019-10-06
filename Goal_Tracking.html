@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#sortable" ).sortable({
+        revert: true
+      });
+      $( "#draggable" ).draggable({
+        connectToSortable: "#sortable",
+        helper: "clone",
+        revert: "invalid"
+      });
+      $( "ul, li" ).disableSelection();
+    } );
+    </script>
+    <style>
+    body {
+    background: #eee;
+  }
+  
+  .p-bar {
+    max-width: 32em;
+    margin: 3em auto;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 20px;
+  }
+  
+  .inner {
+    background: repeating-linear-gradient(
+    45deg,
+    #00965e,
+    #00965e 10px,
+    #00965e 10px, 
+    #00965e 20px
+  );
+    padding: 8px;
+    border-radius: 8px;
+    margin: 5px;
+  }
+  
+  .goal1 {
+    max-width: 80%
+  }
+  
+  .goal2 {
+    max-width: 13.5%;
+  }
+  
+  .goal3 {
+    max-width: 100%;
+  }
+  
+  .goal4 {
+    max-width: 100%;
+  }
+
+  .goalContainer {
+    border-bottom:2px solid #000; 
+    margin: 0 25em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .goalItem {
+      text-align: center;
+      font-size: 24px;
+  }
+
+  .goalCost {
+      text-align:right; 
+      padding: 0 0.5em;
+      font-size: 24px;
+  }
+
+  .title {
+      text-align: center; 
+      font-size: 60px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 700;
+      color: #000;
+  }
+  .titleDiv {
+    border-bottom:2px solid #00965e; margin: 2em 25em 0;
+  }
+
+  .savingsTotal {
+      font-size: 24px;
+      text-align: right;
+      padding: 0.5em 2em;
+      font-weight: 700;
+      color: #00965e;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  li {
+    list-style: none;
+    padding: 0.5em;
+  }
+
+  .savingTotalLable {
+    color:#000;
+  }
+
+  .newGoalContainer {
+    padding: 5em 25em;
+  }
+
+  .savingsTips {
+    text-align: right;
+    border: 2px solid black;
+  }
+  .savingsTotalVelocity {
+    text-align: left;
+    font-size: 24px;
+      padding: 0.25em 2em;
+      font-weight: 700;
+      color: #00965e;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .green {
+    color: #00965e;
+  }
+
+  .weeksLeft {
+    color:red;
+    font-size: 20px;
+  }
+
+  hr {
+    border: 1px solid black;
+
+  }
+
+  </style>
+
+</head>
+<body>    
+      <h1 class="title"><span class="green">Money</span> Made Ready</h1>
+
+
+    <div class="savingsTotal"><span class="savingTotalLable">Savings Total:</span> $4,972</div>
+    
+    <hr>
+    <div class="savingsTotalVelocity"><span class="savingTotalLable">Savings Velocity:</span> $177.00/Week</div>
+  <div class="newGoalContainer">
+      <h1 class="title">Add New Goal</h1>
+    <div id = "inputgoalname" class="form-group">
+      <label form="exampleInputEmail1">Goal Name</label>
+      <input type="text" class="form-control" id="inputgoalname" aria-describedby="emailHelp" placeholder="Car">
+    </div>
+    <div id = "inputgoalamount" class="form-group">
+      <label form="exampleInputEmail1">Goal Amount</label>
+      <input type="text" class="form-control" id="inputgoalamount" aria-describedby="emailHelp" placeholder="$6,700">
+    </div>
+    <button type="button" class="btn btn-primary">Add Goal</button>
+  </div>
+    
+  <div class="titleDiv">
+      <h1 class="title">Goals</h1>
+  </div>
+    <ul id="sortable">
+    <li class="goalContainer ui-state-default">
+            <h1 class="goalItem">2012 Honda Civic</h1>
+            <div class="p-bar">
+                <div class="inner goal1"></div>
+            </div>
+            <h2 class="goalCost">$5,974</h2>
+            <h3 class="weeksLeft">6 Weeks Till you Reach Your Goal!</h3>
+            <p>Increase your weekly savings by $35.40 and reach your goal in 5 weeks!</p>
+          </li>
+
+        <li class="goalContainer ui-state-default">
+            <h1 class="goalItem">Down Payment on House</h1>
+                <div class="p-bar">
+                    <div class="inner goal2"></div>
+                </div>
+            <h2 class="goalCost">$67,500</h2>
+            <h3 class="weeksLeft">6 Years 46 Weeks Till you Reach Your Goal!</h3>
+            <p>Wow this is a great goal!<br>Citizens Bank maybe able to help.<br>Visit: <a href="https://www.citizensbank.com/learning/first-time-home-buyer.aspx">https://www.citizensbank.com/learning/first-time-home-buyer.aspx</a></p>
+          </li>
+            
+
+          <li class="goalContainer ui-state-default">
+            <h1 class="goalItem">70" Samsung TV</h1>
+            
+                <div class="p-bar">
+                    <div class="inner goal3"></div>
+                </div>
+            <h2 class="goalCost">$999</h2>
+            <h3 class="weeksLeft">You Have Reached Your Goal!</h3>
+            <p>Maybe save this money for a larger goal down the road!</p>
+          </li>
+
+        <li class="goalContainer ui-state-default">
+            <h1 class="goalItem">Schwinn Pathway Bike</h1>
+                <div class="p-bar">
+                    <div class="inner goal4"></div>
+                </div>
+            <h2 class="goalCost">$179</h2>
+            <h3 class="weeksLeft">You Have Reached Your Goal!</h3>
+            <p>This purchase will only delay your other goals by only one week!</p>
+          </li>
+</body>
+
+</html>
